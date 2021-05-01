@@ -9,7 +9,7 @@ class Connection {
      public function connect() 
      {
         try {
-            $this->db = new PDO("mysql:host=localhost;dbname=reservation_salle",$this->user,$this->pass);
+            $this->db = new PDO("mysql:host=".$this->server.";dbname=".$this->dbname,$this->user,$this->pass);
           
             return $this->db;
         }
