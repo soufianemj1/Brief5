@@ -18,19 +18,17 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="http://localhost/mvcBrief5/salle/index">salle</a>
+          <a class="nav-link " aria-current="page" href="http://localhost/mvcBrief5/salle/index">salle</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="http://localhost/mvcBrief5/matiere">Matiére</a>
+          <a class="nav-link active" href="http://localhost/mvcBrief5/matiere">Matiére</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="http://localhost/mvcBrief5/groupe">Groupe</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="http://localhost/mvcBrief5/salle/singout">Sing out</a>
+          <a class="nav-link" href="http://localhost/mvcBrief5/matiere/singout">Sing out</a>
         </li>
-        
-        
         
         
       </ul>
@@ -40,16 +38,13 @@
 
 
 
-<form action="http://localhost/mvcBrief5/salle/create" method="post">
+<form action="http://localhost/mvcBrief5/matiere/create" method="post">
     <div class="input-group flex-nowrap">
     
-  <span class="input-group-text" id="addon-wrapping">salle</span>
+  <span class="input-group-text" id="addon-wrapping">matiére</span>
   <input type="text" class="form-control"aria-label="Username" aria-describedby="addon-wrapping" name="libelle">
 </div>
-<div class="input-group flex-nowrap">
-  <span class="input-group-text" id="addon-wrapping">capacité</span>
-  <input type="text" class="form-control"aria-label="Username" aria-describedby="addon-wrapping" name="capacite">
-</div>
+
 
 <button type="submit" class="btn btn-primary">save</button>
 </form >
@@ -58,29 +53,29 @@
 <table class="table table-dark table-hover">
 <tr>
        <th>ID</th>
-       <th>Libelle salle</th>
-       <th>Capacité</th>
-       <th>Action</th>
+       <th>matiére</th>
+       
+       
      </tr>
 <?php 
 
-foreach ($salles as $salle){
+foreach ($matieres as $matiere){
     
      echo "
      
     <tr>
-      <td>".$salle['id']."</td>  <td>".$salle['libelle_salle']."</td> 
-       <td>".$salle['capacité']."</td>
+      <td>".$matiere['id']."</td>  <td>".$matiere['libelle_matiere']."</td> 
+       
         <td> 
 
      <div class='d-flex'>  
 
-     <form action='http://localhost/mvcBrief5/salle/delete' method='post'><button type='submit' class='btn btn-danger'>delete</button>
-        <input type='hidden' name='id' value='".$salle['id']."' />
+     <form action='http://localhost/mvcBrief5/matiere/delete' method='post'><button type='submit' class='btn btn-danger'>delete</button>
+        <input type='hidden' name='id' value='".$matiere['id']."' />
         </form> 
 
-        <form action='http://localhost/mvcBrief5/salle/edit' method='post'><button type='submit' class='btn btn-secondary'>edit</button>
-            <input type='hidden' name='id' value='".$salle['id']."' />
+        <form action='http://localhost/mvcBrief5/matiere/edit' method='post'><button type='submit' class='btn btn-secondary'>edit</button>
+            <input type='hidden' name='id' value='".$matiere['id']."' />
             </form>
         </td>
 </div>

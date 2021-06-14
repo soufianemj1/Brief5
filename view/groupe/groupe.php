@@ -27,11 +27,8 @@
           <a class="nav-link" href="http://localhost/mvcBrief5/groupe">Groupe</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="http://localhost/mvcBrief5/salle/singout">Sing out</a>
+          <a class="nav-link" href="http://localhost/mvcBrief5/matiere/singout">Sing out</a>
         </li>
-        
-        
-        
         
       </ul>
     </div>
@@ -40,15 +37,15 @@
 
 
 
-<form action="http://localhost/mvcBrief5/salle/create" method="post">
+<form action="http://localhost/mvcBrief5/groupe/create" method="post">
     <div class="input-group flex-nowrap">
     
-  <span class="input-group-text" id="addon-wrapping">salle</span>
+  <span class="input-group-text" id="addon-wrapping">groupe</span>
   <input type="text" class="form-control"aria-label="Username" aria-describedby="addon-wrapping" name="libelle">
 </div>
 <div class="input-group flex-nowrap">
-  <span class="input-group-text" id="addon-wrapping">capacité</span>
-  <input type="text" class="form-control"aria-label="Username" aria-describedby="addon-wrapping" name="capacite">
+  <span class="input-group-text" id="addon-wrapping">effectif</span>
+  <input type="text" class="form-control"aria-label="Username" aria-describedby="addon-wrapping" name="effectif">
 </div>
 
 <button type="submit" class="btn btn-primary">save</button>
@@ -58,29 +55,29 @@
 <table class="table table-dark table-hover">
 <tr>
        <th>ID</th>
-       <th>Libelle salle</th>
-       <th>Capacité</th>
+       <th>Libelle groupe</th>
+       <th>effectif</th>
        <th>Action</th>
      </tr>
 <?php 
 
-foreach ($salles as $salle){
+foreach ($groupes as $groupe){
     
      echo "
      
     <tr>
-      <td>".$salle['id']."</td>  <td>".$salle['libelle_salle']."</td> 
-       <td>".$salle['capacité']."</td>
+      <td>".$groupe['id']."</td>  <td>".$groupe['libelle_groupe']."</td> 
+       <td>".$groupe['effectif']."</td>
         <td> 
 
      <div class='d-flex'>  
 
-     <form action='http://localhost/mvcBrief5/salle/delete' method='post'><button type='submit' class='btn btn-danger'>delete</button>
-        <input type='hidden' name='id' value='".$salle['id']."' />
+     <form action='http://localhost/mvcBrief5/groupe/delete' method='post'><button type='submit' class='btn btn-danger'>delete</button>
+        <input type='hidden' name='id' value='".$groupe['id']."' />
         </form> 
 
-        <form action='http://localhost/mvcBrief5/salle/edit' method='post'><button type='submit' class='btn btn-secondary'>edit</button>
-            <input type='hidden' name='id' value='".$salle['id']."' />
+        <form action='http://localhost/mvcBrief5/groupe/edit' method='post'><button type='submit' class='btn btn-secondary'>edit</button>
+            <input type='hidden' name='id' value='".$groupe['id']."' />
             </form>
         </td>
 </div>

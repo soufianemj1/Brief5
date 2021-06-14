@@ -4,10 +4,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="index.php">
+    <link rel="stylesheet"href="http://localhost/mvcBrief5/view/salle/style/style.css">
     <title>Document</title>
-    
 </head>
+
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
@@ -27,73 +27,33 @@
           <a class="nav-link" href="http://localhost/mvcBrief5/groupe">Groupe</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="http://localhost/mvcBrief5/salle/singout">Sing out</a>
+          <a class="nav-link" href="#">Enseignant</a>
         </li>
-        
-        
-        
+        <li class="nav-item">
+          <a class="nav-link" href="#">cours</a>
+        </li>
         
       </ul>
     </div>
   </div>
 </nav>
-
-
-
-<form action="http://localhost/mvcBrief5/salle/create" method="post">
+<div id="inputs">
+<form action="http://localhost/mvcBrief5/Groupe/update" method="post">
     <div class="input-group flex-nowrap">
-    
-  <span class="input-group-text" id="addon-wrapping">salle</span>
-  <input type="text" class="form-control"aria-label="Username" aria-describedby="addon-wrapping" name="libelle">
+  <input type="hidden" class="form-control"aria-label="Username" aria-describedby="addon-wrapping" name="id" value="<?=$obj['id']?>"  >
+</div>
+    <div  class="input-group flex-nowrap">
+  <span class="input-group-text" id="addon-wrapping">groupe</span>
+  <input  type="text" class="form-control"aria-label="Username" aria-describedby="addon-wrapping" name="libelle" value="<?=$obj['libelle_groupe']?>" >
 </div>
 <div class="input-group flex-nowrap">
-  <span class="input-group-text" id="addon-wrapping">capacité</span>
-  <input type="text" class="form-control"aria-label="Username" aria-describedby="addon-wrapping" name="capacite">
+  <span class="input-group-text" id="addon-wrapping">effectif</span>
+  <input type="text"  class="form-control"aria-label="Username" aria-describedby="addon-wrapping" name="effectif" value="<?=$obj['effectif']?>" >
 </div>
 
-<button type="submit" class="btn btn-primary">save</button>
+<button type="submit" class="btn btn-primary">Update</button>
 </form >
-
-
-<table class="table table-dark table-hover">
-<tr>
-       <th>ID</th>
-       <th>Libelle salle</th>
-       <th>Capacité</th>
-       <th>Action</th>
-     </tr>
-<?php 
-
-foreach ($salles as $salle){
-    
-     echo "
-     
-    <tr>
-      <td>".$salle['id']."</td>  <td>".$salle['libelle_salle']."</td> 
-       <td>".$salle['capacité']."</td>
-        <td> 
-
-     <div class='d-flex'>  
-
-     <form action='http://localhost/mvcBrief5/salle/delete' method='post'><button type='submit' class='btn btn-danger'>delete</button>
-        <input type='hidden' name='id' value='".$salle['id']."' />
-        </form> 
-
-        <form action='http://localhost/mvcBrief5/salle/edit' method='post'><button type='submit' class='btn btn-secondary'>edit</button>
-            <input type='hidden' name='id' value='".$salle['id']."' />
-            </form>
-        </td>
 </div>
-    </tr>";
-    
-
-} ?> 
-  
-</table>
-
-
-
-
 
     
 </body>
